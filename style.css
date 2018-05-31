@@ -1,0 +1,47 @@
+ /*Svaki neparni p element ima border širine 5px crne boje sa leve strane;*/
+ p:nth-of-type(odd) {
+ 	border-left: 5px solid black;
+ }
+/* Svaki parni p element koji ima klasu "aaa" ima border sa desne strane sive boje širine 2px;*/
+p.aaa:nth-of-type(even) {
+	border-right: 3px solid gray;
+ }
+/*Tekst unutar prvog (samo prvog) 
+spana unutar p elementa mora biti obojen u zeleno;*/
+p > :first-child {
+ 	color: green;
+ }
+ /*Svaki drugi po redu span samo unutar elemenata sa klasom "aaa" 
+ mora imati pozadinu obojenu u crvenu i tekst u belu boju;*/
+ .aaa span:nth-of-type(2) {
+ 	background-color: red;
+ 	color: white;
+ }
+/*Kada se hoveruje element sa klasom "aaa",
+ tekst unutar spanova tog elementa mora dobiti veličinu 10px;*/
+.aaa span:hover {
+	font-size: 10px;
+}
+ /*Selekcija na 7. p elementu mora učiniti sav tekst nevidljivim;*/
+p:nth-of-type(7)::-moz-selection {
+ 	color: white;
+ }
+ p:nth-of-type(7)::selection {
+ 	color: white;
+ }
+/* 1, 2. i 3. input moraju biti inline elementi, ostali moraju biti blok;*/
+.bbb {
+	display: block;
+ }
+/* Pri focusu svakog parnog inputa sa klasom "bbb" tekst mora biti plave boje;*/
+input.bbb:nth-of-type(even):focus {
+	color: blue;
+}
+/* Svi inputi sa atributom "disabled" moraju biti širine 20px;*/
+input[disabled] {
+	width: 20px;
+}
+/*Svi inputi sa atributom disabled koji su tipski email inputi moraju biti širine 30px.*/
+input[type="email"]:disabled {
+    width: 30px;
+}
